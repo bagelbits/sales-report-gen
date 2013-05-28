@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>135</x>
+      <y>765</y>
+      <w>144</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;album&gt;&gt;
+{Unique Key: id}
+--
+*-id: int*
+-name: tinytext
+-upc: varchar(12)
+-track_count: int
+-sales_start_date: date
+-sales_end_date: date</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>99</x>
+      <y>990</y>
+      <w>189</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;album_track&gt;&gt;
+{Unique Key: id}
+--
+*-id: int auto_increment*
+_-album_id: int_
+_-track_id: int_
+-track_number: int
+-disc_number: int
+-record_num: int
+-isrc: varchar(12)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>171</x>
+      <y>864</y>
+      <w>44</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;27;27;126</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>765</x>
+      <y>594</y>
+      <w>216</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;composition_copyright_holder&gt;&gt;
+{Unique Key: id}
+{Unique Pair: cp_id, comp_id}
+--
+*-id: int*
+_-copyright_holder_id: int_
+_-composition_id: int_
+-ownership_percent: dec(10,2)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>783</x>
+      <y>783</y>
+      <w>207</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;composition&gt;&gt;
+{Unique Key: id}
+--
+*-id: int*
+-name: tinytext
+-original_artist: tinytext
+-composer: tinytext
+-entered_public_domain_on: date</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>783</x>
+      <y>972</y>
+      <w>162</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;track_composition&gt;&gt;
+{Unique Key: id}
+--
+*-id: int*
+_-track_id: int_
+_-composition_id: int_
+-is_cover: bool
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>468</x>
+      <y>972</y>
+      <w>162</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;track&gt;&gt;
+{Unique Key: id}
+--
+*-id: int*
+-name: tinytext
+-track_lenght: dec(10,2)
+-artist_share: dec(10,2)
+-label_share: dec(10,2)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>567</x>
+      <y>549</y>
+      <w>314</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;27;297;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>837</x>
+      <y>684</y>
+      <w>44</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;99;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>846</x>
+      <y>873</y>
+      <w>44</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;27;27;99</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>603</x>
+      <y>1017</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;36;180;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>261</x>
+      <y>1026</y>
+      <w>216</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>207;36;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>450</x>
+      <y>765</y>
+      <w>180</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;artist_track&gt;&gt;
+{Unique Key: id}
+--
+*-id: int auto_increment*
+_-track_id: int_
+_-artist_id: int_
+-ownership_percent: dec(10,2)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>522</x>
+      <y>837</y>
+      <w>44</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;135;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>468</x>
+      <y>531</y>
+      <w>126</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;artist&gt;&gt;
+{Unique Key: id}
+--
+*-id: int*
+-name: tinytext</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>513</x>
+      <y>576</y>
+      <w>44</w>
+      <h>206</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;27;27;189</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>90</x>
+      <y>585</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;artist_album&gt;&gt;
+{Unique Key: id}
+--
+*-id: int auto_increment*
+_-artist_id: int_
+_-album_id: int_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>252</x>
+      <y>549</y>
+      <w>233</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>216;27;27;72</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>171</x>
+      <y>657</y>
+      <w>44</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;108;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1098</x>
+      <y>369</y>
+      <w>207</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;sales_id_override&gt;&gt;
+{Unique Key: old_code}
+--
+*-id: int auto_increment*
+-bad_code: varchar(12) UNIQUE
+-good_code: varchar(12)
+-comment: varchar</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>792</x>
+      <y>324</y>
+      <w>243</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;sales&gt;&gt;
+{Unique Key: sales_id}
+{Unique Key code(sales_period, code)}
+--
+*-id: int auto_increment*
+-sales_period: date
+-code: varchar(12)
+-gross_sales: tinytext
+-num_unit_sales: int
+-num_streams: int
+-num_downloads: int
+UNIQUE KEY code (sales_period, code)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>378</x>
+      <y>297</y>
+      <w>360</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;artist_totals&gt;&gt;
+{Unique Key: total_id}
+--
+*-id: int auto_increment*
+_-artist_id: int_
+-period_start: date
+-period_end: date
+-total_net_income: tinytext
+-total_royalty: tinytext
+UNIQUE KEY artist_id (artist_id, period_start, period_end)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>504</x>
+      <y>423</y>
+      <w>44</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;108;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1089</x>
+      <y>612</y>
+      <w>144</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;composer&gt;&gt;
+{Unique Key: id}
+fg=red
+TODO
+--
+*-id: int*
+-name: tinytext</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1062</x>
+      <y>774</y>
+      <w>216</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;composition_composers&gt;&gt;
+{Unique Key: id}
+fg=red
+TODO
+--
+*-id: int*
+_-composer_id: int_
+_-composition_id: int_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>963</x>
+      <y>819</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>99;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1143</x>
+      <y>675</y>
+      <w>36</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>27;27;27;99</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>45</x>
+      <y>162</y>
+      <w>288</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;artist_revenue&gt;&gt;
+{Unique Key: id}
+{Unique Pair: artist_id, sales_period, code}
+--
+*-id int auto_increment*
+_-artist_id int_
+-sales_period
+-code
+-gross_sales
+-num_unit_sales
+-num_streams
+-num_downloads
+-royalty_rate
+-publisher_royalty
+-gross_income
+-client_split
+-net_income
+-is_active
+UNIQUE KEY artist_id (artist_id, sales_period, code)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>189</x>
+      <y>432</y>
+      <w>296</w>
+      <h>134</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>279;117;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>306</x>
+      <y>288</y>
+      <w>89</w>
+      <h>53</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>72;27;27;36</additional_attributes>
+  </element>
+</diagram>
